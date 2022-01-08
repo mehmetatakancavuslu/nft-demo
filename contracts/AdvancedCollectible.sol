@@ -41,6 +41,7 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         bytes32 requestId = requestRandomness(keyhash, fee);
         requestIdToSender[requestId] = msg.sender;
         emit requestedCollectible(requestId, msg.sender);
+        tokenCounter++;
     }
 
     function fulfillRandomness(bytes32 requestId, uint256 randomNumber)
