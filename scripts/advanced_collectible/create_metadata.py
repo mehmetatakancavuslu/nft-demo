@@ -26,10 +26,11 @@ headers = {
 def main():
     advanced_collectible = AdvancedCollectible[-1]
     number_of_advanced_collectibles = advanced_collectible.tokenCounter()
-    print(f"{advanced_collectible.address}")
     print(f"You have created {number_of_advanced_collectibles} collectibles!")
     for token_id in range(number_of_advanced_collectibles):
+        print(token_id)
         breed = get_breed(advanced_collectible.tokenIdToBreed(token_id))
+        print(breed)
         metadata_file_name = (
             f"./metadata/{network.show_active()}/{token_id}-{breed}.json"
         )
