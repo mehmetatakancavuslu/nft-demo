@@ -54,8 +54,7 @@ contract AdvancedCollectible is ERC721, VRFConsumerBase {
         emit breedAssigned(newTokenId, breed);
         address owner = requestIdToSender[requestId];
         _safeMint(owner, newTokenId);
-        // _setTokenURI(newTokenId, tokenURI)
-        tokenCounter++;
+        // _setTokenURI(newTokenId, tokenURI);
     }
 
     function setTokenURI(uint256 tokenId, string memory _tokenURI) public {
